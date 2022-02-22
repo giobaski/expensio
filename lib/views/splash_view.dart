@@ -60,17 +60,17 @@ class _SplashViewState extends State<SplashView> {
                 SizedBox(height: 25),
                 FittedBox(
                   fit: BoxFit.fitWidth,
-                  child: Text('EXPANSIO!',
+                  child: Text('EXPENSIO!',
                     style: TextStyle(fontSize: 38.0, fontWeight: FontWeight.bold, color: Colors.white,),
                   ),
                 ),
                 SizedBox(height: 5),
                 Text(
-                  'Track your expense with us!', style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.white),
+                  'Track your expenses with us!', style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 SizedBox(height: 15),
                 ElevatedButton(
-                  child: Text("შესვლა"),
+                  child: Text("JOIN NOW"),
                   style: ElevatedButton.styleFrom(primary: Colors.pinkAccent),
                   onPressed: () {
                     authController.isLogged.value
