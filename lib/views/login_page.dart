@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
           keyboardType: TextInputType.text,
           decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-            prefixIcon: Icon(Icons.phone, color: Colors.indigoAccent),
+            prefixIcon: Icon(Icons.person, color: Colors.indigoAccent),
             labelText: 'username',
             contentPadding: EdgeInsets.all(0),
           ),

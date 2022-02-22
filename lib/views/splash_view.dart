@@ -70,7 +70,7 @@ class _SplashViewState extends State<SplashView> {
                 ),
                 SizedBox(height: 15),
                 ElevatedButton(
-                  child: Text("JOIN NOW"),
+                  child: Text("Get Started"),
                   style: ElevatedButton.styleFrom(primary: Colors.pinkAccent),
                   onPressed: () {
                     authController.isLogged.value
