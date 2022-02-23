@@ -1,3 +1,5 @@
+import 'package:expensio/controllers/auth_controller.dart';
+import 'package:expensio/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,8 +17,9 @@ class _HomePageState extends State<HomePage> {
         title: Text("Home"),
         centerTitle: true,
       ),
+      drawer: CustomDrawer(),
       body: Center(
-        child: Text('HOME'),
+        child: Text("Hello ${AuthController.instance.firebaseUser.value!.email}"),
       ),
     );
   }

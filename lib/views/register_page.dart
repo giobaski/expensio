@@ -3,14 +3,15 @@ import 'package:expensio/utils/dialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final AuthController authController = Get.find();
 
   final TextEditingController _emailController = TextEditingController();
@@ -22,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login Page"),
+        title: Text("Registration Page"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -32,17 +33,15 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Start building login form
               SizedBox(height: 50),
               _buildEmailTextField(),
               _buildPasswordTextField(),
-              _buildForgotPasswordBtn(),
-              _buildLoginBtn(),
+              _buildregisterBtn(),
               TextButton(
                   onPressed: () => {
-                    Get.toNamed('/register')
+                    Get.toNamed('/login')
                   },
-                  child: Text("Don't have an account? create here", style: TextStyle(color: Colors.indigoAccent),)
+                  child: Text("have an account?", style: TextStyle(color: Colors.indigoAccent),)
               ),
             ],
           ),
@@ -66,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
           decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
             prefixIcon: Icon(Icons.email, color: Colors.indigoAccent),
-            labelText: 'username',
+            labelText: 'email',
             contentPadding: EdgeInsets.all(0),
           ),
         ),
@@ -105,18 +104,8 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildForgotPasswordBtn() {
-    return Container(
-      alignment: Alignment.centerRight,
-      child: TextButton(
-          onPressed: () => {
-            Get.toNamed('/password-change')
-          },
-          child: Text("Forgot your password?", style: TextStyle(color: Colors.indigoAccent),)),
-    );
-  }
 
-  Widget _buildLoginBtn() {
+  Widget _buildregisterBtn() {
     return Obx(() =>
         Container(
           width: double.infinity,
@@ -134,18 +123,13 @@ class _LoginPageState extends State<LoginPage> {
                   MyDialogs.error("Shouldn't be empty!", "please fill both inputs");
                   return;
                 }
-                authController.login(_emailController.text, _passwordController.text);
+                authController.register(_emailController.text, _passwordController.text);
               },
               child: authController.isLoading.value
                   ? Text("loading...") // CircularProgressIndicator(color: Colors.white, strokeWidth: 1,)
-                  : Text("Sign In")
+                  : Text("Sign Up")
           ),
         )
     );
   }
-
-
-
-
-
 }
