@@ -30,7 +30,10 @@ class AuthController extends GetxController {
   void _checkLoginStatus(User? firebaseUser) {
     if (firebaseUser == null) {
       isLogged.value = false;
-      Get.offAll(() => LoginPage());
+      Future.delayed(Duration(seconds: 8), (){
+        Get.offAll(() => LoginPage());
+
+      });
     } else {
       isLogged.value = true;
       Get.offAll(() => HomePage());
