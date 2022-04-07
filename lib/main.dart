@@ -1,3 +1,4 @@
+import 'package:expensio/views/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -25,8 +26,19 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Expensio App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.grey,
+        // colorScheme: ColorScheme.dark(),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+                primary: Colors.indigoAccent,
+                elevation: 1,
+                padding: EdgeInsets.all(5),
+                minimumSize: Size(100, 35),
+                shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(30.0)))),
       ),
       initialRoute: '/splash',
       getPages: [
@@ -34,6 +46,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/login', page: () => LoginPage()),
         GetPage(name: '/register', page: () => RegisterPage()),
         GetPage(name: '/home', page: () => HomePage()),
+        GetPage(name: '/profile', page: () => ProfilePage()),
+
       ],
     );
   }

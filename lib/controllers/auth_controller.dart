@@ -5,8 +5,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'expense_controller.dart';
+
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
+  static ExpenseController expenseController = Get.find();
+
+
   var isLogged = false.obs;
   var isLoading = false.obs;
 
@@ -56,8 +61,8 @@ class AuthController extends GetxController {
 
   void logout() async {
     await auth.signOut();
+    expenseController.dispose();
   }
-
 
 
 }

@@ -1,4 +1,5 @@
 import 'package:expensio/controllers/auth_controller.dart';
+import 'package:expensio/views/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -46,7 +47,7 @@ class CustomDrawer extends StatelessWidget {
             leading: Icon(Icons.person),
             title: const Text('Profile'),
             onTap: () {
-              Get.toNamed("/profile");
+              Get.to(() => ProfilePage());
             },
           ),
           // ListTile(
