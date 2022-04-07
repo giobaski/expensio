@@ -16,5 +16,5 @@ Steps to run the app:
 <img src="https://user-images.githubusercontent.com/4931346/162324147-ba8196ef-c239-4d4f-a1b6-bb9bffc37a27.png" alt="InfiniteGraph Logo" width="200"> <img src="https://user-images.githubusercontent.com/4931346/162294484-1f641b40-013a-4399-82c9-0a521e840ca4.png" alt="InfiniteGraph Logo" width="200"> <img src="https://user-images.githubusercontent.com/4931346/162294632-4b051b26-c877-4145-b67e-5cacc2778bc2.png" alt="InfiniteGraph Logo" width="200"><img src="https://user-images.githubusercontent.com/4931346/162294561-f776db23-113d-4fe7-8ca9-eb9cdd26d7f9.png" alt="InfiniteGraph Logo" width="200">
 
 
-I've got an issue which has not been fixed yet: I try to display statistics on Home page (total amounts of expenses grouped by category), 
+I've got an issue which has not been fixed yet: I try to display statistics on Home page (total amount of expenses grouped by category), 
 but It sometimes doesn't show the value and returns null instead. 
